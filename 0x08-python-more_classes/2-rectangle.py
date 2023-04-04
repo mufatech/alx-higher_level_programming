@@ -40,20 +40,20 @@ class Rectangle:
         self.__height = value
 
     
-    def __init__(self, lenght=0, breath=0):
+    def __init__(self, width=0, height=0):
         """Initializes area and perimeter of rectangle"""
-        self.lenght = lenght
-        self.breath = breath
+        self.width = width
+        self.height = height
 
     def area(self):
         """returns the area of the rectangle"""
-        return self.__lenght * self.__breath
+        return self.__width * self.__height
 
     def perimeter(self):
         """returns the perimeter of the rectangle"""
-        if self.__lenght == 0 or self.__breath == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__lenght * 2) + (self.__breath *2)
+        return (self.__width * 2) + (self.__height *2)
 
 
 
