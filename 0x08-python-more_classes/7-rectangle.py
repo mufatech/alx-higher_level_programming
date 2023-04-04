@@ -5,18 +5,15 @@ Defines a class Rectangle
 
 
 class Rectangle:
-    """Representation of a rectangle"""
+    """Represent of a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initialize a new Rectangle"""
         self.width = width
         self.height = height
     
 
-    def __del__(self):
-        """prints a string when an instance has been deleted"""
-        print("Bye rectangle...")
-        
+            
     @property
     def width(self):
         """getter for the private instance attribute width"""
@@ -58,11 +55,23 @@ class Rectangle:
     def __str__(self):
         """returns printable string representation of the rectangle"""
         string = ""
-        if self.__width != 0 and self.__height != 0:
-            string += "\n".join("#" * self.__width
-                                for j in range(self.__height))
-        return string
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+
+        rect = []
+        for i in range(self.__height):
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
+            if i != self.__height - 1:
+                rect.append("\n")
+        return ("".join(rect))
+
 
     def __repr__(self):
         """returns a string representation of the rectangle for reproduction"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+
+    def __del__(self):
+        """Display a message for every deletion of a Rectangle."""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
