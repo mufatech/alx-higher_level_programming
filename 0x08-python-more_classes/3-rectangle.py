@@ -40,6 +40,11 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
         
+     def __init__(self, width=0, height=0):
+        """Initializes area and perimeter of rectangle"""
+        self.width = width
+        self.height = height
+        
 
     def area(self):
         """returns the area of the rectangle"""
