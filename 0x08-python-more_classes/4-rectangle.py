@@ -31,6 +31,8 @@ class Rectangle:
     def height(self):
         """getter for private instance attribute height"""
         return self.__height
+
+
     @height.setter
     def height(self, value):
         """setter for private instance attribute height"""
