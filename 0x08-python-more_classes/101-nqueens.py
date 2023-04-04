@@ -21,42 +21,42 @@ if __name__ == "__main__":
         exit(1)
 
     # initialize the answer list
-    for j in range(n):
-        a.append([j, None])
+    for i in range(n):
+        a.append([i, None])
 
     def already_exists(y):
-        """check that a queen does not already exist in that z value"""
-        for y in range(n):
-            if z == a[y][1]:
+        """check that a queen does not already exist in that y value"""
+        for x in range(n):
+            if y == a[x][1]:
                 return True
         return False
 
-    def reject(y, z):
+    def reject(x, y):
         """determines whether or not to reject the solution"""
-        if (already_exists(z)):
+        if (already_exists(y)):
             return False
-        j = 0
-        while(j < y):
-            if abs(a[j][1] - z) == abs(j - y):
+        i = 0
+        while(i < x):
+            if abs(a[i][1] - y) == abs(i - x):
                 return False
-            j += 1
+            i += 1
         return True
 
-    def clear_a(y):
+    def clear_a(x):
         """clears the answers from the point of failure on"""
-        for j in range(y, n):
-            a[j][1] = None
+        for i in range(x, n):
+            a[i][1] = None
 
-    def nqueens(y):
+    def nqueens(x):
         """recursive backtracking function to find the solution"""
-        for z in range(n):
-            clear_a(y)
-            if reject(y, z):
-                a[y][1] = z
-                if (y == n - 1):  # accepts the solution
+        for y in range(n):
+            clear_a(x)
+            if reject(x, y):
+                a[x][1] = y
+                if (x == n - 1):  # accepts the solution
                     print(a)
                 else:
-                    nqueens(y + 1)  # moves on to next y value to continue
+                    nqueens(x + 1)  # moves on to next x value to continue
 
-    # start the recursive process at y = 0
+    # start the recursive process at x = 0
     nqueens(0)
