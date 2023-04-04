@@ -4,10 +4,9 @@
 
 class Rectangle:
     """Representation of a rectangle"""
-    def __init__(self, width=0):
+    def __init__(self, width=0, height=0):
         """Initialize the rectanglee"""
         self.width = width
-    def __init__(self, height=0):
         self.height = height
     
     @property
