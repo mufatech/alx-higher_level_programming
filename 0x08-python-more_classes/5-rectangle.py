@@ -6,11 +6,12 @@ Defines a class Rectangle
 
 
 class Rectangle:
-    """Representation of a Rectangle"""
+    """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
-        """Initialize the rectangle"""
+        """Initializes the rectangle"""
         self.width = width
         self.height = height
+
 
     def __del__(self):
         """print a string when and instance has been deleted"""
@@ -45,11 +46,6 @@ class Rectangle:
         self.__height = value
 
     
-    def __init__(self, width=0, height=0):
-        """Initializes area and perimeter of rectangle"""
-        self.width = width
-        self.height = height
-
     
     def area(self):
         """returns the area of the rectangle"""
