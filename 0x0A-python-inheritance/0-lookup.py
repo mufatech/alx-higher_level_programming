@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Consist of the lookup function
-"""
+"""Defines an object attributes and methods using of the lookup function"""
 
 
 def lookup(obj):
