@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a fucntion that returns dict description with simple data "class_to_json" function
+Defines function that return the dictionary description "class_to_json" function
 """
 
 
