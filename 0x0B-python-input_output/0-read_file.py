@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines the funtion read_file
+Defines the funtion read_file and prints it to stdout.
 """
 
 
