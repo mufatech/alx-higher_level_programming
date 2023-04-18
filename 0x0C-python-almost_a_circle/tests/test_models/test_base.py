@@ -12,15 +12,15 @@ class Test_Base(unittest.TestCase):
     """Defines a class to evaluate diferent test cases for base.py file"""
 
     def test_instance_type_id_class(self):
-        """Checks for a instance of the class
-        """
+        """Checks for a instance of the class"""
+
         b1 = Base()
         self.assertIsInstance(b1, Base)
         self.assertFalse(type(b1) == type(Base))
         self.assertFalse(id(b1) == id(Base))
         b2 = Base()
-        self.assertTrue(type(b2) == type(b2))
-        self.assertFalse(id(b2) == id(b2))
+        self.assertTrue(type(b1) == type(b2))
+        self.assertFalse(id(b1) == id(b2))
 
     def test_none_id(self):
         """Checks when id is none"""
@@ -191,8 +191,8 @@ class Test_Base(unittest.TestCase):
             self.assertEqual(result, '[]')
 
     def test_from_json_string(self):
-        """Checks from_json_string method
-        """
+        """Checks from_json_string method"""
+
         list_input = [
                     {'id': 89, 'width': 10, 'height': 4},
                     {'id': 7, 'width': 1, 'height': 7}
@@ -300,8 +300,8 @@ class Test_Base(unittest.TestCase):
         self.assertFalse(s1 == s2)
 
     def test_load_from_file(self):
-        """Checks for load_from_file
-        """
+        """Checks for load_from_file"""
+
         # Check for rectangle load from file
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(str(list_rectangles_output), "[]")
@@ -359,8 +359,8 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(str(s2), str(list_square_output[1]))
 
     def test_save_csv(self):
-        """Checks save_csv method
-        """
+        """Checks save_csv method"""
+
         # Checks save to csv file
         Rectangle.save_to_file_csv(None)
         with open("Rectangle.csv", "r") as file:
